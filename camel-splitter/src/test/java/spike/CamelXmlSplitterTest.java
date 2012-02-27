@@ -9,7 +9,7 @@ import org.junit.Test;
 import org.springframework.context.support.AbstractXmlApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class Camel24XmlMulticastTest extends CamelSpringTestSupport
+public class CamelXmlSplitterTest extends CamelSpringTestSupport
 {
     @EndpointInject(uri = "mock:error")
     protected MockEndpoint errorEndpoint;
@@ -23,7 +23,7 @@ public class Camel24XmlMulticastTest extends CamelSpringTestSupport
     @Override
     protected AbstractXmlApplicationContext createApplicationContext()
     {
-        return new ClassPathXmlApplicationContext("camel-context.xml");
+        return new ClassPathXmlApplicationContext("camel-xml-context.xml");
     }
 
     @Test

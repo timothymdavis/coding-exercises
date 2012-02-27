@@ -10,7 +10,7 @@
   <packaging>pom</packaging>
 
   <modules>
-    <module>camel-xml-multicast</module>
+    <module>camel-splitter</module>
     <module>jrebel</module>
   </modules>
 

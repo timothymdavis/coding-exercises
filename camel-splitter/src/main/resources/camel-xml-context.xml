@@ -17,7 +17,7 @@
     <onException>
       <exception>java.lang.Exception</exception>
       <handled><constant>true</constant></handled>
-      <log message="An unexpected exception has occured." loggingLevel="ERROR" />
+      <log message="An unexpected exception has occurred." loggingLevel="ERROR" />
       <to uri="mock:error" />
     </onException>
 
@@ -25,17 +25,11 @@
       <from uri="direct:route1" />
       <split parallelProcessing="false" stopOnException="true">
         <xpath>//SomeElement</xpath>
-        <multicast parallelProcessing="false" stopOnException="true">
-          <to uri="direct:route2" />
-        </multicast>
+        <log message="Splitting!" loggingLevel="INFO" />
+        <throwException ref="exception" />
       </split>
       <log message="Successfully Finished!" loggingLevel="INFO" />
       <to uri="mock:success" />
-    </route>
-
-    <route id="route2">
-      <from uri="direct:route2" />
-      <throwException ref="exception" />
     </route>
 
   </camelContext>
