@@ -11,6 +11,7 @@
 
   <modules>
     <module>camel-splitter</module>
+    <module>dev-process</module>
     <module>fizzbuzz</module>
     <module>jrebel</module>
   </modules>
