@@ -2,12 +2,13 @@ package spike;
 
 public class HelloWorld {
 
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
+    public static void main(String[] args) throws InterruptedException {
+        JRebelHotswapTest jRebelHotswapTest = new JRebelHotswapTest();
 
-        // At this point you can modify JRebelHotswapTest and it will hotswap on compilation.
-
-        new JRebelHotswapTest().printSomething();
+        while(true) {
+            jRebelHotswapTest.printSomething();
+            Thread.sleep(1000);
+        }
     }
 
 }
