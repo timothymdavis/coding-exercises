@@ -99,4 +99,78 @@ public class SorterTest {
         assertThatSorterWorks(new MergeSorter<Integer>(), Arrays.asList(4));
     }
 
+    @Test
+    public void quickSort() throws Exception {
+        assertThatSorterWorks(new QuickSorter<Integer>(), Arrays.asList(4, 5, 2, 7, 0, -2, 9));
+    }
+
+    @Test
+    public void quickSortWithComparator() throws Exception {
+        assertThatSorterWorks(
+                new QuickSorter<Integer>(new ComparableAdapter<Integer>()),
+                Arrays.asList(4, 5, 2, 7, 0, -2, 9));
+    }
+
+    @Test
+    public void quickSortWithEmptyList() throws Exception {
+        assertThatSorterWorks(new QuickSorter<Integer>(), new ArrayList<Integer>());
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void quickSortWithNullComparator() throws Exception {
+        new QuickSorter<Integer>(null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void quickSortWithNullList() throws Exception {
+        new QuickSorter<Integer>().sort(null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void quickSortWithNullListItem() throws Exception {
+        new QuickSorter<Integer>().sort(Arrays.asList(4, 5, 2, null, 7, 0, -2, 9));
+    }
+
+    @Test
+    public void quickSortWithOnlyOneListItem() throws Exception {
+        assertThatSorterWorks(new QuickSorter<Integer>(), Arrays.asList(4));
+    }
+
+    @Test
+    public void insertionSort() throws Exception {
+        assertThatSorterWorks(new InsertionSorter<Integer>(), Arrays.asList(4, 5, 2, 7, 0, -2, 9));
+    }
+
+    @Test
+    public void insertionSortWithComparator() throws Exception {
+        assertThatSorterWorks(
+                new InsertionSorter<Integer>(new ComparableAdapter<Integer>()),
+                Arrays.asList(4, 5, 2, 7, 0, -2, 9));
+    }
+
+    @Test
+    public void insertionSortWithEmptyList() throws Exception {
+        assertThatSorterWorks(new InsertionSorter<Integer>(), new ArrayList<Integer>());
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void insertionSortWithNullComparator() throws Exception {
+        new InsertionSorter<Integer>(null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void insertionSortWithNullList() throws Exception {
+        new InsertionSorter<Integer>().sort(null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void insertionSortWithNullListItem() throws Exception {
+        new InsertionSorter<Integer>().sort(Arrays.asList(4, 5, 2, null, 7, 0, -2, 9));
+    }
+
+    @Test
+    public void insertionSortWithOnlyOneListItem() throws Exception {
+        assertThatSorterWorks(new InsertionSorter<Integer>(), Arrays.asList(4));
+    }
+
 }
