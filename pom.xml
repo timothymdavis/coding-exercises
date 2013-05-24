@@ -15,6 +15,7 @@
     <module>fizzbuzz</module>
     <module>jrebel</module>
     <module>coding-exercises</module>
+    <module>osgi</module>
   </modules>
 
   <properties>
