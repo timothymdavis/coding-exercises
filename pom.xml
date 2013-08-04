@@ -10,13 +10,9 @@
   <packaging>pom</packaging>
 
   <modules>
-    <module>camel-splitter</module>
     <module>character-encoding</module>
-    <module>dev-process</module>
     <module>fizzbuzz</module>
-    <module>jrebel</module>
     <module>coding-exercises</module>
-    <module>osgi</module>
   </modules>
 
   <properties>
