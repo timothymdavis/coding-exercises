@@ -11,7 +11,14 @@
     <relativePath>../</relativePath>
   </parent>
 
-  <groupId>spikes</groupId>
   <artifactId>fizzbuzz</artifactId>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.8.1</version>
+    </dependency>
+  </dependencies>
 
 </project>
