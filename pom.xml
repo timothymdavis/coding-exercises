@@ -5,19 +5,16 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>spikes</groupId>
-  <artifactId>spikes</artifactId>
+  <artifactId>coding-exercises</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
 
-  <modules>
-    <module>character-encoding</module>
-    <module>fizzbuzz</module>
-    <module>coding-exercises</module>
-  </modules>
-
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.8.1</version>
+    </dependency>
+  </dependencies>
 
   <build>
 
@@ -33,25 +30,8 @@
         </configuration>
       </plugin>
 
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.9</version>
-        <configuration>
-          <reportsDirectory>${project.build.directory}/surefire-reports/test</reportsDirectory>
-          <excludes>
-            <exclude>**/*IntegrationTest.java</exclude>
-          </excludes>
-          <systemPropertyVariables>
-            <test.tmpdir>${project.build.directory}</test.tmpdir>
-            <java.io.tmpdir>${project.build.directory}</java.io.tmpdir>
-          </systemPropertyVariables>
-        </configuration>
-      </plugin>
-
     </plugins>
 
   </build>
-
 
 </project>
