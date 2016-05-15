@@ -56,8 +56,8 @@ public class HashMap<K, V> implements Map<K, V> {
     }
 
     private int getIndexForKey(K key) {
-        int entriesLength = entries.length - 1;
-        int maxIndex = entriesLength < 0 ? 0 : entriesLength;
+        int maxEntriesIndex = entries.length - 1;
+        int maxIndex = maxEntriesIndex < 0 ? 0 : maxEntriesIndex;
         return key.hashCode() & maxIndex;
     }
 
@@ -65,7 +65,7 @@ public class HashMap<K, V> implements Map<K, V> {
     public void put(final K key, final V value) {
         assertKeyNotNull(key);
 
-        Entry<K, V> entry = new Entry<K, V>(key, value);
+        Entry<K, V> entry = new Entry<>(key, value);
         int indexForKey = getIndexForKey(key);
         Entry<K, V> bucket = entries[indexForKey];
 
@@ -114,13 +114,13 @@ public class HashMap<K, V> implements Map<K, V> {
         }
     }
 
-    private class Entry<K, V> {
+    private class Entry<Key, Value> {
 
-        private K key;
-        private Entry<K, V> next;
-        private V value;
+        private final Key key;
+        private Entry<Key, Value> next;
+        private final Value value;
 
-        public Entry(K key, V value) {
+        public Entry(Key key, Value value) {
             this.key = key;
             this.value = value;
         }

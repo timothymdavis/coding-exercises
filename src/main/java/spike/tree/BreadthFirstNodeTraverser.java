@@ -10,7 +10,7 @@ public class BreadthFirstNodeTraverser<T> implements NodeTraverser<T> {
     @Override
     public void traverse(BinaryTreeNode<T> node, NodeVisitor<T> visitor) {
         if (node != null) {
-            Queue<BinaryTreeNode<T>> queue = new LinkedList<BinaryTreeNode<T>>();
+            Queue<BinaryTreeNode<T>> queue = new LinkedList<>();
             queue.add(node);
             while (!queue.isEmpty() && !finished) {
                 BinaryTreeNode<T> currentNode = queue.poll();

@@ -11,7 +11,7 @@ public class SortedInsertNodeVisitor<T extends Comparable<T>> implements NodeVis
     @Override
     public boolean visit(BinaryTreeNode<T> node) {
         if (node != null) {
-            BinaryTreeNode<T> newNode = new BinaryTreeNode<T>(node, value);
+            BinaryTreeNode<T> newNode = new BinaryTreeNode<>(node, value);
             if (value.compareTo(node.getValue()) < 0) {
                 if (node.getLeft() == null) {
                     node.setLeft(newNode);

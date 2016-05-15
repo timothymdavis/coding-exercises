@@ -9,7 +9,7 @@ import org.junit.Test;
 public class StackToQueueConverterTest {
     
     private void assertThatConversionWorks(StackToQueueConverter<Integer> converter) {
-        Stack<Integer> stack = new Stack<Integer>();
+        Stack<Integer> stack = new Stack<>();
 
         stack.push(1);
         stack.push(2);
@@ -28,12 +28,12 @@ public class StackToQueueConverterTest {
 
     @Test
     public void stackProblemCpuHog() {
-        assertThatConversionWorks(new MemoryHogStackToQueueConverter<Integer>());
+        assertThatConversionWorks(new MemoryHogStackToQueueConverter<>());
     }
 
     @Test
     public void stackProblemMemoryHog() {
-        assertThatConversionWorks(new CpuHogStackToQueueConverter<Integer>());
+        assertThatConversionWorks(new CpuHogStackToQueueConverter<>());
     }
 
     @Test

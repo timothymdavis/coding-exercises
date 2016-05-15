@@ -17,7 +17,7 @@ public class InsertionSorter<T extends Comparable<T>> implements Sorter<T> {
      * Default constructor. Uses a {@link ComparableAdapter} for comparisons.
      */
     public InsertionSorter() {
-        comparator = new ComparableAdapter<T>();
+        comparator = new ComparableAdapter<>();
     }
 
     /**
@@ -41,7 +41,7 @@ public class InsertionSorter<T extends Comparable<T>> implements Sorter<T> {
         }
 
         // Create a cloned copy so that the parameter sortableList doesn't suffer any side effects.
-        ArrayList<T> clonedSortableList = new ArrayList<T>(sortableList);
+        ArrayList<T> clonedSortableList = new ArrayList<>(sortableList);
 
         sortInner(clonedSortableList);
 

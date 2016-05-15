@@ -17,7 +17,7 @@ public class QuickSorter<T extends Comparable<T>> implements Sorter<T> {
      * Default constructor. Uses a {@link ComparableAdapter} for comparisons.
      */
     public QuickSorter() {
-        comparator = new ComparableAdapter<T>();
+        comparator = new ComparableAdapter<>();
     }
 
     /**
@@ -55,7 +55,7 @@ public class QuickSorter<T extends Comparable<T>> implements Sorter<T> {
             throw new IllegalArgumentException();
         }
         // Create a cloned copy so that the parameter sortableList doesn't suffer any side effects.
-        ArrayList<T> clonedSortableList = new ArrayList<T>(sortableList);
+        ArrayList<T> clonedSortableList = new ArrayList<>(sortableList);
         sort(clonedSortableList, 0, sortableList.size() - 1);
         return clonedSortableList;
     }

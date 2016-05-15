@@ -8,10 +8,10 @@ import static org.junit.Assert.assertThat;
 
 public class SortedBinaryTreeTest {
 
-    private SortedBinaryTree<Integer> smallTree;
+    private final SortedBinaryTree<Integer> smallTree;
 
     public SortedBinaryTreeTest() {
-        smallTree = new SortedBinaryTree<Integer>();
+        smallTree = new SortedBinaryTree<>();
         smallTree.insert(6);
         smallTree.insert(9);
         smallTree.insert(4);

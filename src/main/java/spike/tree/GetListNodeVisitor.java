@@ -5,7 +5,7 @@ import java.util.List;
 
 public class GetListNodeVisitor<T> implements NodeVisitor<T> {
 
-    private List<T> result = new ArrayList<T>();
+    private final List<T> result = new ArrayList<>();
 
     @Override
     public boolean visit(BinaryTreeNode<T> node) {

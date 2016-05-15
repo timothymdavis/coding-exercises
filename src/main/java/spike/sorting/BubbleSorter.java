@@ -17,7 +17,7 @@ public class BubbleSorter<T extends Comparable<T>> implements Sorter<T> {
      * Default constructor. Uses a {@link ComparableAdapter} for comparisons.
      */
     public BubbleSorter() {
-        comparator = new ComparableAdapter<T>();
+        comparator = new ComparableAdapter<>();
     }
 
     /**
@@ -39,7 +39,7 @@ public class BubbleSorter<T extends Comparable<T>> implements Sorter<T> {
         if (sortableList == null) {
             throw new IllegalArgumentException("Parameter sortableList must not be null!");
         }
-        ArrayList<T> clonedSortableList = new ArrayList<T>(sortableList);
+        ArrayList<T> clonedSortableList = new ArrayList<>(sortableList);
         sortInner(clonedSortableList);
         return clonedSortableList;
     }

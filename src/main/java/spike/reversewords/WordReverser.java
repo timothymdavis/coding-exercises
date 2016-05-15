@@ -7,7 +7,7 @@ public class WordReverser {
 
     public static final String IGNORED_CHARACTERS = " .?!,;\t\n";
 
-    private char[] snippet;
+    private final char[] snippet;
     private int startingCursor;
     private int endingCursor;
     

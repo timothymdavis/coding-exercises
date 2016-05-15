@@ -17,7 +17,7 @@ public class MergeSorter<T extends Comparable<T>> implements Sorter<T> {
      * Default constructor. Uses a {@link ComparableAdapter} for comparisons.
      */
     public MergeSorter() {
-        comparator = new ComparableAdapter<T>();
+        comparator = new ComparableAdapter<>();
     }
 
     /**
@@ -41,7 +41,7 @@ public class MergeSorter<T extends Comparable<T>> implements Sorter<T> {
         }
 
         // Create a cloned copy so that the parameter sortableList doesn't suffer any side effects.
-        ArrayList<T> clonedSortableList = new ArrayList<T>(sortableList);
+        ArrayList<T> clonedSortableList = new ArrayList<>(sortableList);
 
         sort(clonedSortableList, 0, sortableList.size());
 
@@ -58,7 +58,7 @@ public class MergeSorter<T extends Comparable<T>> implements Sorter<T> {
     }
 
     private void merge(List<T> list, int start, int middle, int end) {
-        ArrayList<T> mergedList = new ArrayList<T>();
+        ArrayList<T> mergedList = new ArrayList<>();
 
         int l = 0, r = 0;
 

@@ -3,7 +3,7 @@ package spike.tree;
 public class SortedBinaryTreeNodeTraverser<T extends Comparable<T>> implements NodeTraverser<T> {
 
     private boolean finished = false;
-    private T searchCriteria;
+    private final T searchCriteria;
 
     public SortedBinaryTreeNodeTraverser(T searchCriteria) {
         this.searchCriteria = searchCriteria;

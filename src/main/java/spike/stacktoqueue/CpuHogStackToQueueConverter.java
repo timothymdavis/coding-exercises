@@ -11,8 +11,8 @@ public class CpuHogStackToQueueConverter<A> implements StackToQueueConverter<A> 
 
     @Override
     public Queue<A> to(Stack<A> stack) {
-        stack = stack != null ? stack : new Stack<A>();
-        Queue<A> queue = new LinkedList<A>();
+        stack = stack != null ? stack : new Stack<>();
+        Queue<A> queue = new LinkedList<>();
 
         while (!stack.isEmpty()) {
             A item = stack.pop();
