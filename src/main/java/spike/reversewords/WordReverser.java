@@ -12,8 +12,7 @@ public class WordReverser {
     private int endingCursor;
     
     public WordReverser(String snippet) {
-        this.snippet = new char[snippet.length()];
-        snippet.getChars(0, snippet.length(), this.snippet, 0);
+        this.snippet = snippet.toCharArray();
         startingCursor = -1;
         endingCursor = -1;
     }
