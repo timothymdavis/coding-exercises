@@ -3,6 +3,12 @@ package spike.tree;
 import java.util.Arrays;
 
 import org.junit.Test;
+import spike.tree.traverser.BreadthFirstNodeTraverser;
+import spike.tree.traverser.DepthFirstInOrderNodeTraverser;
+import spike.tree.traverser.DepthFirstPostOrderNodeTraverser;
+import spike.tree.traverser.DepthFirstPreOrderNodeTraverser;
+import spike.tree.visitor.GetListNodeVisitor;
+import spike.tree.visitor.SearchNodeVisitor;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;

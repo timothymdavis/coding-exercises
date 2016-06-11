@@ -1,4 +1,6 @@
-package spike.tree;
+package spike.tree.visitor;
+
+import spike.tree.BinaryTreeNode;
 
 public class SortedInsertNodeVisitor<T extends Comparable<T>> implements NodeVisitor<T> {
 

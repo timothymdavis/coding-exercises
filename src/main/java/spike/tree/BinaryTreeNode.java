@@ -1,5 +1,8 @@
 package spike.tree;
 
+import spike.tree.traverser.NodeTraverser;
+import spike.tree.visitor.NodeVisitor;
+
 public class BinaryTreeNode<T> {
 
     private BinaryTreeNode<T> left;

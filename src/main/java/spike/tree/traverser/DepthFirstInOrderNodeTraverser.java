@@ -1,14 +1,17 @@
-package spike.tree;
+package spike.tree.traverser;
 
-public class DepthFirstPreOrderNodeTraverser<T> implements NodeTraverser<T> {
+import spike.tree.BinaryTreeNode;
+import spike.tree.visitor.NodeVisitor;
+
+public class DepthFirstInOrderNodeTraverser<T> implements NodeTraverser<T> {
 
     private boolean finished = false;
 
     @Override
     public void traverse(BinaryTreeNode<T> node, NodeVisitor<T> visitor) {
         if (node != null && !finished) {
-            finished = visitor.visit(node);
             traverse(node.getLeft(), visitor);
+            finished = visitor.visit(node);
             traverse(node.getRight(), visitor);
         }
     }

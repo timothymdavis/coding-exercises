@@ -1,4 +1,7 @@
-package spike.tree;
+package spike.tree.visitor;
+
+import spike.tree.BinaryTreeNode;
+import spike.tree.visitor.NodeVisitor;
 
 import java.util.ArrayList;
 import java.util.List;

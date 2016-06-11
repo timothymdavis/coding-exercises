@@ -1,4 +1,8 @@
-package spike.tree;
+package spike.tree.traverser;
+
+import spike.tree.BinaryTreeNode;
+import spike.tree.traverser.NodeTraverser;
+import spike.tree.visitor.NodeVisitor;
 
 public class SortedBinaryTreeNodeTraverser<T extends Comparable<T>> implements NodeTraverser<T> {
 

@@ -1,4 +1,7 @@
-package spike.tree;
+package spike.tree.traverser;
+
+import spike.tree.BinaryTreeNode;
+import spike.tree.visitor.NodeVisitor;
 
 import java.util.LinkedList;
 import java.util.Queue;
