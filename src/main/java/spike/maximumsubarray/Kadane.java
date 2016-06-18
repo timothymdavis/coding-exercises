@@ -12,15 +12,15 @@ public class Kadane {
         Objects.requireNonNull(array);
         if (array.length == 0) throw new IllegalArgumentException("array must not be empty");
 
-        int startIndex = 0, endIndex = 0, runningTotal = 0, subTotal = Integer.MIN_VALUE;
+        int startIndex = 0, endIndex = 0, sum = 0, total = Integer.MIN_VALUE;
         for (int i = 0; i < array.length; i++) {
-            runningTotal += array[i];
-            if (array[i] > subTotal) {
+            sum += array[i];
+            if (array[i] > (sum < 0 ? total : sum)) {
                 startIndex = i;
-                runningTotal = array[i];
+                sum = array[i];
             }
-            if (runningTotal > subTotal) {
-                subTotal = runningTotal;
+            if (sum > total) {
+                total = sum;
                 endIndex = i;
             }
         }

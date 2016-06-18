@@ -22,6 +22,10 @@ public class KadaneTest {
         assertThat(Kadane.maximumSubarray(new int[] {-100, -100, -1, -100, -10}), is(new int[] {-1}));
         assertThat(Kadane.maximumSubarray(new int[] {-100, 100, -1, 100, -100}), is(new int[] {100, -1, 100}));
         assertThat(Kadane.maximumSubarray(new int[] {-100, 100, -1, 100, 10}), is(new int[] {100, -1, 100, 10}));
+        assertThat(Kadane.maximumSubarray(new int[] {1, 2, 3, 4}), is(new int[] {1, 2, 3 , 4}));
+        assertThat(Kadane.maximumSubarray(new int[] {-1, 2, 3, 4}), is(new int[] {2, 3 , 4}));
+        assertThat(Kadane.maximumSubarray(new int[] {-1, 2, -3, 4}), is(new int[] {4}));
+        assertThat(Kadane.maximumSubarray(new int[] {-1, 2, -1, 4}), is(new int[] {2, -1, 4}));
     }
 
 }
