@@ -24,6 +24,10 @@ public abstract class BaseSimpleGraph<V> implements Graph<V> {
         traverse(new BreadthFirstGraphTraverser<>(), visitor);
     }
 
+    public void breadthFirstTraverseFrom(Vertex<V> startVertex, GraphVisitor<V> visitor) {
+        traverseFrom(startVertex, new BreadthFirstGraphTraverser<>(), visitor);
+    }
+
     public List<V> depthFirstVertexValues() {
         GetVertexValuesGraphVisitor<V> visitor = new GetVertexValuesGraphVisitor<>();
         depthFirstTraverse(visitor);
@@ -32,6 +36,10 @@ public abstract class BaseSimpleGraph<V> implements Graph<V> {
 
     public void depthFirstTraverse(GraphVisitor<V> visitor) {
         traverse(new DepthFirstGraphTraverser<>(), visitor);
+    }
+
+    public void depthFirstTraverseFrom(Vertex<V> startVertex, GraphVisitor<V> visitor) {
+        traverseFrom(startVertex, new DepthFirstGraphTraverser<>(), visitor);
     }
 
     public Map<Vertex<V>, List<Vertex<V>>> getAdjacencyList() {
@@ -64,7 +72,11 @@ public abstract class BaseSimpleGraph<V> implements Graph<V> {
 
     public void traverse(GraphTraverser<V> traverser, GraphVisitor<V> visitor) {
         Objects.requireNonNull(getStartVertex());
-        traverser.traverse(getStartVertex(), visitor);
+        traverseFrom(getStartVertex(), traverser, visitor);
+    }
+
+    public void traverseFrom(Vertex<V> startVertex, GraphTraverser<V> traverser, GraphVisitor<V> visitor) {
+        traverser.traverse(startVertex, visitor);
     }
 
 }

@@ -6,7 +6,7 @@ public class SearchGraphVisitor<V>
         implements GraphVisitor<V> {
 
     private final V searchCriteria;
-    private Vertex<V> resultNode;
+    private Vertex<V> resultVertex;
 
     public SearchGraphVisitor(V searchCriteria) {
         this.searchCriteria = searchCriteria;
@@ -15,15 +15,15 @@ public class SearchGraphVisitor<V>
     @Override
     public boolean visit(Vertex<V> vertex) {
         if (vertex != null && vertex.getValue() != null && vertex.getValue().equals(searchCriteria)) {
-            resultNode = vertex;
+            resultVertex = vertex;
             return true;
         } else {
             return false;
         }
     }
 
-    public Vertex<V> getResultNode() {
-        return resultNode;
+    public Vertex<V> getResultVertex() {
+        return resultVertex;
     }
 
 }
