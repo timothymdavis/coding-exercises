@@ -30,7 +30,7 @@ public final class SortUtil {
     }
 
     private static void merge(int[] a, int start, int middle, int end) {
-        int[] m = new int[end - start + 1];
+        int[] m = new int[end - start];
         int l = 0, r = 0, i = 0;
 
         while (l < middle - start && r < end - middle) {
@@ -45,7 +45,7 @@ public final class SortUtil {
             m[i++] = a[middle + r++];
         }
 
-        System.arraycopy(m, 0, a, start, m.length - 1);
+        System.arraycopy(m, 0, a, start, end - start);
     }
 
     public static void quickSort(int[] a) {
