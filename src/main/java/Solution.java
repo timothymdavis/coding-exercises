@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.stream.IntStream;
 
@@ -8,6 +9,7 @@ public class Solution {
 
 
     public static void solve(int[] n) {
+        System.out.println(Arrays.toString(n));
     }
 
 
@@ -18,7 +20,7 @@ public class Solution {
     /**
      * Boilerplate code for HackerRank problems.
      */
-    private final static class Boilerplate {
+    public static class Boilerplate {
 
         public static void genericTestCase(TestCaseHandler handler) {
             Scanner scanner = new Scanner(System.in);
@@ -40,8 +42,8 @@ public class Solution {
         public static void intArrayTestCase(IntArrayTestCaseHandler handler) {
             genericTestCase(s -> handler
                     .handle(IntStream.range(0, s.nextInt())
-                            .map(i -> s.nextInt())
-                            .toArray()));
+                    .map(i -> s.nextInt())
+                    .toArray()));
         }
 
         public interface TestCaseHandler {
