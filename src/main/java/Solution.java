@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Scanner;
 import java.util.stream.IntStream;
 
@@ -9,7 +8,6 @@ public class Solution {
 
 
     public static void solve(int[] n) {
-        System.out.println(Arrays.toString(n));
     }
 
 
@@ -26,6 +24,12 @@ public class Solution {
             Scanner scanner = new Scanner(System.in);
             int testCaseCount = scanner.nextInt();
             IntStream.range(0, testCaseCount).forEach(i -> handler.handle(scanner));
+        }
+
+        @SuppressWarnings("unused")
+        public static void singleRowTestCase(TestCaseHandler handler) {
+            Scanner scanner = new Scanner(System.in);
+            handler.handle(scanner);
         }
 
         @SuppressWarnings("unused")
