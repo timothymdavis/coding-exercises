@@ -14,7 +14,12 @@ public class CombinatoricsUtility {
     }
 
     public static long nCr(long n, long r) {
-        return nPr(n, r) / factorial(r);
+        long result = 1;
+        r = Math.min(r, n - r);
+        for (int i = 1; i <= r; i++, n--) {
+            result = result / i * n + result % i * n / i;
+        }
+        return result;
     }
 
     public static long nPr(long n, long r) {
