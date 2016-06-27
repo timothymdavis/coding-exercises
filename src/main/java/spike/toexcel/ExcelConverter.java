@@ -8,8 +8,8 @@ public class ExcelConverter {
 
     public static int toExcel(String columnName) {
         int result = (columnName.length() - 1) * 26;
-        String lastCharacter = columnName.substring(columnName.length() - 1);
-        result += Integer.parseInt(lastCharacter, 36) - 9;
+        char lastCharacter = columnName.substring(columnName.length() - 1).charAt(0);
+        result += lastCharacter - 'A' + 1;
         return result;
     }
 
