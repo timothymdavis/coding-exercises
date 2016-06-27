@@ -11,4 +11,9 @@ public class BitUtility {
         }
     }
 
+    public static int subtract(int x, int y) {
+        int yNegative = add(1, ~y);
+        return add(x, yNegative);
+    }
+
 }
