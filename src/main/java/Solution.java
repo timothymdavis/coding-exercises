@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.stream.IntStream;
 
@@ -8,6 +9,7 @@ public class Solution {
 
 
     public static void solve(int[] n) {
+        System.out.println(Arrays.toString(n));
     }
 
 

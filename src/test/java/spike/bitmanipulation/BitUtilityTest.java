@@ -33,4 +33,21 @@ public class BitUtilityTest {
         assertThat(subtract(Integer.MIN_VALUE + 1, 1), is(Integer.MIN_VALUE));
     }
 
+    @Test
+    public void testCaratOperator() {
+        assertThat(fromBinary("1010") & fromBinary("0011"), is(fromBinary("0010")));
+        assertThat(fromBinary("1010") | fromBinary("0011"), is(fromBinary("1011")));
+        assertThat(fromBinary("1010") ^ fromBinary("0011"), is(fromBinary("1001")));
+        assertThat(fromBinary("00001010") << 1, is(fromBinary("00010100")));
+        assertThat(fromBinary("00001010") << 2, is(fromBinary("00101000")));
+        assertThat(fromBinary("00001010") >> 1, is(fromBinary("00000101")));
+        assertThat(fromBinary("00001010") >> 2, is(fromBinary("00000010")));
+        assertThat(fromBinary("11111111111111111111111111110101") >>> 1, is(fromBinary("01111111111111111111111111111010")));
+        assertThat(~fromBinary("1010"), is(fromBinary("11111111111111111111111111110101")));
+    }
+
+    private int fromBinary(String binaryNumber) {
+        return (int) ((long) Long.valueOf(binaryNumber, 2));
+    }
+
 }
