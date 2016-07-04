@@ -34,20 +34,17 @@ public class BitUtilityTest {
     }
 
     @Test
-    public void testCaratOperator() {
-        assertThat(fromBinary("1010") & fromBinary("0011"), is(fromBinary("0010")));
-        assertThat(fromBinary("1010") | fromBinary("0011"), is(fromBinary("1011")));
-        assertThat(fromBinary("1010") ^ fromBinary("0011"), is(fromBinary("1001")));
-        assertThat(fromBinary("00001010") << 1, is(fromBinary("00010100")));
-        assertThat(fromBinary("00001010") << 2, is(fromBinary("00101000")));
-        assertThat(fromBinary("00001010") >> 1, is(fromBinary("00000101")));
-        assertThat(fromBinary("00001010") >> 2, is(fromBinary("00000010")));
-        assertThat(fromBinary("11111111111111111111111111110101") >>> 1, is(fromBinary("01111111111111111111111111111010")));
-        assertThat(~fromBinary("1010"), is(fromBinary("11111111111111111111111111110101")));
-    }
-
-    private int fromBinary(String binaryNumber) {
-        return (int) ((long) Long.valueOf(binaryNumber, 2));
+    public void testOperators() {
+        assertThat(0b1010 & 0b0011, is(0b0010));
+        assertThat(0b1010 | 0b0011, is(0b1011));
+        assertThat(0b1010 ^ 0b0011, is(0b1001));
+        assertThat(0b00001010 << 1, is(0b00010100));
+        assertThat(0b00001010 << 2, is(0b00101000));
+        assertThat(0b00001010 >> 1, is(0b00000101));
+        assertThat(0b00001010 >> 2, is(0b00000010));
+        assertThat(0b11111111111111111111111111110101 >>> 1,
+                is(0b01111111111111111111111111111010));
+        assertThat(~0b1010, is(0b11111111111111111111111111110101));
     }
 
 }
