@@ -8,6 +8,27 @@ import static org.junit.Assert.*;
 public class KadaneTest {
 
     @Test(expected = NullPointerException.class)
+    public void testMaximumSubarraySumForNullArray() throws Exception {
+        Kadane.maximumSubarraySum(null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testMaximumSubarraySumForEmptyArray() throws Exception {
+        Kadane.maximumSubarraySum(new int[] {});
+    }
+
+    @Test
+    public void testMaximumSubarraySum() throws Exception {
+        assertThat(Kadane.maximumSubarraySum(new int[] {-100, -100, -1, -100, -10}), is(-1L));
+        assertThat(Kadane.maximumSubarraySum(new int[] {-100, 100, -1, 100, -100}), is(199L));
+        assertThat(Kadane.maximumSubarraySum(new int[] {-100, 100, -1, 100, 10}), is(209L));
+        assertThat(Kadane.maximumSubarraySum(new int[] {1, 2, 3, 4}), is(10L));
+        assertThat(Kadane.maximumSubarraySum(new int[] {-1, 2, 3, 4}), is(9L));
+        assertThat(Kadane.maximumSubarraySum(new int[] {-1, 2, -3, 4}), is(4L));
+        assertThat(Kadane.maximumSubarraySum(new int[] {-1, 2, -1, 4}), is(5L));
+    }
+
+    @Test(expected = NullPointerException.class)
     public void testMaximumSubarrayForNullArray() throws Exception {
         Kadane.maximumSubarray(null);
     }
