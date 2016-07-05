@@ -1,5 +1,8 @@
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.function.Consumer;
+import java.util.function.IntFunction;
+import java.util.function.Supplier;
 import java.util.stream.IntStream;
 
 /**
@@ -8,13 +11,13 @@ import java.util.stream.IntStream;
 public class Solution {
 
 
-    public static void solve(int[] n) {
+    public static void solve(Integer[] n) {
         System.out.println(Arrays.toString(n));
     }
 
 
     public static void main(String[] args) {
-        Boilerplate.intArrayTestCase(Solution::solve);
+        Boilerplate.multiTestCase(s -> solve(Boilerplate.nextArray(s.nextInt(), s::nextInt, Integer[]::new)));
     }
 
     /**
@@ -22,50 +25,23 @@ public class Solution {
      */
     public static class Boilerplate {
 
-        public static void genericTestCase(TestCaseHandler handler) {
+        @SuppressWarnings("unused")
+        public static void singleTestCase(Consumer<Scanner> handler) {
+            handler.accept(new Scanner(System.in));
+        }
+
+        public static void multiTestCase(Consumer<Scanner> handler) {
             Scanner scanner = new Scanner(System.in);
             int testCaseCount = scanner.nextInt();
-            IntStream.range(0, testCaseCount).forEach(i -> handler.handle(scanner));
+            IntStream.range(0, testCaseCount).forEach(i -> handler.accept(scanner));
         }
 
-        @SuppressWarnings("unused")
-        public static void singleRowTestCase(TestCaseHandler handler) {
-            Scanner scanner = new Scanner(System.in);
-            handler.handle(scanner);
-        }
-
-        @SuppressWarnings("unused")
-        public static void intTestCase(IntTestCaseHandler handler) {
-            genericTestCase(s -> handler.handle(s.nextInt()));
-        }
-
-        @SuppressWarnings("unused")
-        public static void twoIntTestCase(TwoIntTestCaseHandler handler) {
-            genericTestCase(s -> handler.handle(s.nextInt(), s.nextInt()));
-        }
-
-        @SuppressWarnings("unused")
-        public static void intArrayTestCase(IntArrayTestCaseHandler handler) {
-            genericTestCase(s -> handler
-                    .handle(IntStream.range(0, s.nextInt())
-                    .map(i -> s.nextInt())
-                    .toArray()));
-        }
-
-        public interface TestCaseHandler {
-            void handle(Scanner scanner);
-        }
-
-        public interface IntTestCaseHandler {
-            void handle(int number);
-        }
-
-        public interface TwoIntTestCaseHandler {
-            void handle(int numberOne, int numberTwo);
-        }
-
-        public interface IntArrayTestCaseHandler {
-            void handle(int[] array);
+        /**
+         * {@code singleTestCase(s -> nextArray(s, s::next, String[]::new)); }
+         * {@code multiTestCase(s -> nextArray(s, s::nextInt, Integer[]::new)); }
+         */
+        public static <A> A[] nextArray(int size, Supplier<A> supplier, IntFunction<A[]> intFunction) {
+            return IntStream.range(0, size).mapToObj(i -> supplier.get()).toArray(intFunction);
         }
 
     }
