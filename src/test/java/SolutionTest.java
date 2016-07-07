@@ -34,8 +34,8 @@ public class SolutionTest {
         Scanner actualScanner = new Scanner(actualIS);
         Scanner expectedScanner = new Scanner(expectedIS);
 
-        Solution.Boilerplate.multiTestCase(s -> {
-            Solution.solve(Solution.Boilerplate.nextArray(s.nextInt(), s::nextInt, Integer[]::new));
+        Solution.Boilerplate.singleTestCase(s -> {
+            Solution.solve(s.nextInt());
             String actualLine = actualScanner.nextLine();
             String expectedLine = expectedScanner.nextLine();
             arguments.add(new String[]{actualLine, expectedLine});

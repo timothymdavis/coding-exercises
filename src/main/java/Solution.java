@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Scanner;
 import java.util.function.Consumer;
 import java.util.function.IntFunction;
@@ -11,13 +10,13 @@ import java.util.stream.IntStream;
 public class Solution {
 
 
-    public static void solve(Integer[] n) {
-        System.out.println(Arrays.toString(n));
+    public static void solve(int n) {
+        System.out.println(n);
     }
 
 
     public static void main(String[] args) {
-        Boilerplate.multiTestCase(s -> solve(Boilerplate.nextArray(s.nextInt(), s::nextInt, Integer[]::new)));
+        Boilerplate.singleTestCase(Scanner::nextInt);
     }
 
     /**
@@ -30,6 +29,7 @@ public class Solution {
             handler.accept(new Scanner(System.in));
         }
 
+        @SuppressWarnings("unused")
         public static void multiTestCase(Consumer<Scanner> handler) {
             Scanner scanner = new Scanner(System.in);
             int testCaseCount = scanner.nextInt();
