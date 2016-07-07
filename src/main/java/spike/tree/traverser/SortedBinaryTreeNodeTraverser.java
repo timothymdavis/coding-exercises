@@ -1,17 +1,14 @@
 package spike.tree.traverser;
 
+import lombok.RequiredArgsConstructor;
 import spike.tree.BinaryTreeNode;
-import spike.tree.traverser.NodeTraverser;
 import spike.tree.visitor.NodeVisitor;
 
+@RequiredArgsConstructor
 public class SortedBinaryTreeNodeTraverser<T extends Comparable<T>> implements NodeTraverser<T> {
 
     private boolean finished = false;
     private final T searchCriteria;
-
-    public SortedBinaryTreeNodeTraverser(T searchCriteria) {
-        this.searchCriteria = searchCriteria;
-    }
 
     @Override
     public void traverse(BinaryTreeNode<T> node, NodeVisitor<T> visitor) {

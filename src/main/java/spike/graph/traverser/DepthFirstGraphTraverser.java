@@ -10,7 +10,7 @@ import java.util.Map;
 public class DepthFirstGraphTraverser<T> implements GraphTraverser<T> {
 
     private boolean finished = false;
-    private Map<Vertex, Boolean> visitedMap = new HashMap<>();
+    private final Map<Vertex, Boolean> visitedMap = new HashMap<>();
 
     @Override
     public void traverse(Vertex<T> vertex, GraphVisitor<T> visitor) {

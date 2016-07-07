@@ -1,16 +1,15 @@
 package spike.graph.visitor;
 
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import spike.graph.Vertex;
 
-public class SearchGraphVisitor<V>
-        implements GraphVisitor<V> {
+@Getter
+@RequiredArgsConstructor
+public class SearchGraphVisitor<V> implements GraphVisitor<V> {
 
     private final V searchCriteria;
     private Vertex<V> resultVertex;
-
-    public SearchGraphVisitor(V searchCriteria) {
-        this.searchCriteria = searchCriteria;
-    }
 
     @Override
     public boolean visit(Vertex<V> vertex) {
@@ -20,10 +19,6 @@ public class SearchGraphVisitor<V>
         } else {
             return false;
         }
-    }
-
-    public Vertex<V> getResultVertex() {
-        return resultVertex;
     }
 
 }

@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 public class BreadthFirstGraphTraverser<V> implements GraphTraverser<V> {
 
     private boolean finished = false;
-    private Map<Vertex, Boolean> visitedMap = new HashMap<>();
+    private final Map<Vertex, Boolean> visitedMap = new HashMap<>();
 
     @Override
     public void traverse(Vertex<V> vertex, GraphVisitor<V> visitor) {
