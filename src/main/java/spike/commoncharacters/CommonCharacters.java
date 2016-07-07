@@ -10,6 +10,11 @@ import java.util.Set;
  */
 public class CommonCharacters {
 
+    /**
+     * Dumb, brute force implementation.
+     * <p/>
+     * It should be O(n^2).
+     */
     public static String nSquared(String a, String b) {
         StringBuilder sb = new StringBuilder();
         for (char aCharacter : a.toCharArray()) {
@@ -22,6 +27,12 @@ public class CommonCharacters {
         return sb.toString();
     }
 
+    /**
+     * Adds the characters of one of the strings to a {@link HashSet}. Then loops through the next string of characters
+     * and does a constant time lookup of the current character.
+     * <p/>
+     * It should be O(n).
+     */
     public static String n(String a, String b) {
         Set<Character> characterSet = new HashSet<>();
         for (char aCharacter : a.toCharArray()) {

@@ -3,6 +3,8 @@ package spike.bitmanipulation;
 public class BitUtility {
 
     /**
+     * Adds two integers together without using the + operator.
+     *
      *    8 ,    2 ->   10,     0
      * 1000 , 0010 -> 1010, 00000
      *
@@ -22,6 +24,13 @@ public class BitUtility {
         }
     }
 
+    /**
+     * Subtracts one integer from another without using the - operator.
+     *
+     * @param x left side.
+     * @param y right side.
+     * @return the result.
+     */
     public static int subtract(int x, int y) {
         int yNegative = add(1, ~y);
         return add(x, yNegative);

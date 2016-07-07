@@ -6,6 +6,13 @@ import java.util.List;
 
 public class Permuter {
 
+    /**
+     * Provides a list of all permutations of the characters in {@code str}. For instance:
+     * <p/>
+     * "ab" -> {@code Arrays.asList("ab", "ba")}
+     * <p/>
+     * "abc" -> {@code Arrays.asList("abc", "acb", "bac", "bca", "cab", "cba")}
+     */
     public static List<String> permute(String str) {
         if (str.length() == 1) {
             return new ArrayList<>(Collections.singletonList(str));

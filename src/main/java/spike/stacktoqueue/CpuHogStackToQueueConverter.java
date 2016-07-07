@@ -5,7 +5,8 @@ import java.util.Queue;
 import java.util.Stack;
 
 /**
- * Doesn't use an intermediary data structure, but it requires an extra loop, making the solution O(3n).
+ * Doesn't use an intermediary data structure, but it requires an extra loop, making the solution O(3n), which is still
+ * effectively O(n).
  */
 public class CpuHogStackToQueueConverter<A> implements StackToQueueConverter<A> {
 
