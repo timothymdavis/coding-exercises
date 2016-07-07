@@ -20,59 +20,59 @@ public final class SortUtil {
         mergeSort(a, 0, a.length);
     }
 
-    public static void mergeSort(int[] a, int start, int end) {
-        if (end - start > 1) {
-            int middle = start + ((end - start) / 2);
-            mergeSort(a, start, middle);
-            mergeSort(a, middle, end);
-            merge(a, start, middle, end);
+    public static void mergeSort(int[] a, int left, int right) {
+        if (right - left > 1) {
+            int middle = left + ((right - left) / 2);
+            mergeSort(a, left, middle);
+            mergeSort(a, middle, right);
+            merge(a, left, middle, right);
         }
     }
 
-    private static void merge(int[] a, int start, int middle, int end) {
-        int[] m = new int[end - start];
+    private static void merge(int[] a, int left, int middle, int right) {
+        int[] m = new int[right - left];
         int l = 0, r = 0, i = 0;
 
-        while (l < middle - start && r < end - middle) {
-            m[i++] = a[start + l] < a[middle + r] ? a[start + l++] : a[middle + r++];
+        while (l < middle - left && r < right - middle) {
+            m[i++] = a[left + l] < a[middle + r] ? a[left + l++] : a[middle + r++];
         }
 
-        while (l < middle - start) {
-            m[i++] = a[start + l++];
+        while (l < middle - left) {
+            m[i++] = a[left + l++];
         }
 
-        while (r < end - middle) {
+        while (r < right - middle) {
             m[i++] = a[middle + r++];
         }
 
-        System.arraycopy(m, 0, a, start, end - start);
+        System.arraycopy(m, 0, a, left, right - left);
     }
 
     public static void quickSort(int[] a) {
         quickSort(a, 0, a.length - 1);
     }
 
-    public static void quickSort(int[] a, int start, int end) {
-        if (end - start > 0) {
-            int pivot = partition(a, start, end);
-            quickSort(a, start, pivot - 1);
-            quickSort(a, pivot + 1, end);
+    public static void quickSort(int[] a, int left, int right) {
+        if (right - left > 0) {
+            int pivot = partition(a, left, right);
+            quickSort(a, left, pivot - 1);
+            quickSort(a, pivot + 1, right);
         }
     }
 
-    private static int partition(int[] a, int start, int end) {
-        int pivotValue = a[end];
-        while (start != end) {
-            if (a[start] < pivotValue) {
-                start++;
+    private static int partition(int[] a, int left, int right) {
+        int pivotValue = a[right];
+        while (left != right) {
+            if (a[left] < pivotValue) {
+                left++;
             }
             else {
-                a[end] = a[start];
-                a[start] = a[--end];
+                a[right] = a[left];
+                a[left] = a[--right];
             }
         }
-        a[end] = pivotValue;
-        return end;
+        a[right] = pivotValue;
+        return right;
     }
 
 }
