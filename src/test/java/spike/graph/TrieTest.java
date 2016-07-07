@@ -2,8 +2,6 @@ package spike.graph;
 
 import org.junit.Test;
 
-import java.util.Arrays;
-
 import static java.util.Arrays.asList;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;

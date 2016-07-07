@@ -1,6 +1,6 @@
 package spike.graph;
 
-import spike.graph.traverser.BreadthFirstGraphTraverser;
+import spike.graph.traverser.OneLevelGraphTraverser;
 import spike.graph.visitor.SearchGraphVisitor;
 
 import java.util.List;
@@ -101,9 +101,8 @@ public class Trie extends BaseSimpleGraph<Character> {
     }
 
     private Optional<Vertex<Character>> findNext(Character value, Vertex<Character> current) {
-        final int maxDepth = 1;
         SearchGraphVisitor<Character> visitor = new SearchGraphVisitor<>(value);
-        traverseFrom(current, new BreadthFirstGraphTraverser<>(maxDepth), visitor);
+        traverseFrom(current, new OneLevelGraphTraverser<>(), visitor);
         if (visitor.getResultVertex() != null) {
             return Optional.ofNullable(visitor.getResultVertex());
         }
