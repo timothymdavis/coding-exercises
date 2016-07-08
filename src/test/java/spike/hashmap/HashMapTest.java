@@ -10,11 +10,7 @@ public class HashMapTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void testGetWithMapSizeOfZero() throws Exception {
-        HashMap<String, String> map = new HashMap<>(0);
-        map.put("some-key", "some-value");
-        map.put("next-key", "next-value");
-        assertThat(map.get("some-key"), is("some-value"));
-        assertThat(map.get("next-key"), is("next-value"));
+        new HashMap<>(0);
     }
 
     @Test

@@ -56,9 +56,7 @@ public class HashMap<K, V> implements Map<K, V> {
     }
 
     private int getIndexForKey(K key) {
-        int maxEntriesIndex = entries.length - 1;
-        int maxIndex = maxEntriesIndex < 0 ? 0 : maxEntriesIndex;
-        return key.hashCode() & maxIndex;
+        return key.hashCode() & (entries.length - 1);
     }
 
     @Override
