@@ -16,7 +16,7 @@ public class Solution {
 
 
     public static void main(String[] args) {
-        Boilerplate.singleTestCase(Scanner::nextInt);
+        Boilerplate.singleTestCase(s -> solve(s.nextInt()));
     }
 
     /**
