@@ -3,7 +3,8 @@ package spike.incrementversion;
 import java.util.Stack;
 
 /**
- * Increment a version number by some amount (e.g. 2.4.9 would become 2.5.0.)
+ * Increment a version number by some amount. Don't allow any particular number to exceed 9 (e.g. 2.4.9 would become
+ * 2.5.0.)
  */
 public class VersionIncrementer {
     
