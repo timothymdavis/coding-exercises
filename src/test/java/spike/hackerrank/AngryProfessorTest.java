@@ -12,21 +12,21 @@ import java.util.List;
 import static spike.hackerrank.HackerRankBoilerplate.nextArray;
 
 @RunWith(Parameterized.class)
-public class DivisibleSumPairsTest extends HackerRankTest {
+public class AngryProfessorTest extends HackerRankTest {
 
-    public DivisibleSumPairsTest(String actual, String expected) {
+    public AngryProfessorTest(String actual, String expected) {
         super(actual, expected);
     }
 
     @Parameters
     public static Collection<Object> getParameters() throws IOException {
-        TestContext context = getTestContext("/hackerrank/divisible-sum-pairs-input.txt", "/hackerrank/divisible-sum-pairs-output.txt");
+        TestContext context = getTestContext("/hackerrank/angry-professor-input.txt", "/hackerrank/angry-professor-output.txt");
 
         List<Object> arguments = new ArrayList<>();
 
-        HackerRankBoilerplate.singleTestCase(s -> {
+        HackerRankBoilerplate.multiTestCase(s -> {
             int arraySize = s.nextInt();
-            DivisibleSumPairs.solve(s.nextInt(), nextArray(arraySize, s::nextInt, Integer[]::new));
+            AngryProfessor.solve(s.nextInt(), nextArray(arraySize, s::nextInt, Integer[]::new));
             populateTestArguments(context, arguments);
         });
 

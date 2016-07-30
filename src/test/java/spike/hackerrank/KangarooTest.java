@@ -17,15 +17,14 @@ public class KangarooTest extends HackerRankTest {
     }
 
     @Parameters
-    public static Collection<Object> setUpScanners() throws IOException {
+    public static Collection<Object> getParameters() throws IOException {
         TestContext context = getTestContext("/hackerrank/kangaroo-input.txt", "/hackerrank/kangaroo-output.txt");
 
         List<Object> arguments = new ArrayList<>();
+
         HackerRankBoilerplate.multiTestCaseWithoutSize(s -> {
             Kangaroo.solve(s.nextInt(), s.nextInt(), s.nextInt(), s.nextInt());
-            String actualLine = context.getActualScanner().nextLine();
-            String expectedLine = context.getExpectedScanner().nextLine();
-            arguments.add(new String[]{actualLine, expectedLine});
+            populateTestArguments(context, arguments);
         });
 
         return arguments;

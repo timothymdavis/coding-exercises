@@ -31,6 +31,12 @@ public abstract class HackerRankTest {
         return new TestContext(actualScanner, expectedScanner);
     }
 
+    protected static void populateTestArguments(TestContext context, List<Object> arguments) {
+        String actualLine = context.getActualScanner().nextLine();
+        String expectedLine = context.getExpectedScanner().nextLine();
+        arguments.add(new String[]{actualLine, expectedLine});
+    }
+
     @Test
     public void verifyTestCase() {
         assertThat(actual, equalTo(expected));
