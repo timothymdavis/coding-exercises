@@ -9,6 +9,7 @@ import java.util.*;
 
 import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.fail;
 
 @AllArgsConstructor
 public abstract class HackerRankTest {
@@ -32,9 +33,11 @@ public abstract class HackerRankTest {
     }
 
     protected static void populateTestArguments(TestContext context, List<Object> arguments) {
-        String actualLine = context.getActualScanner().nextLine();
-        String expectedLine = context.getExpectedScanner().nextLine();
-        arguments.add(new String[]{actualLine, expectedLine});
+        Scanner actualScanner = context.getActualScanner();
+        Scanner expectedScanner = context.getExpectedScanner();
+        String actualLine = actualScanner.nextLine();
+        String expectedLine = expectedScanner.nextLine();
+        arguments.add(new String[]{actualLine.trim(), expectedLine.trim()});
     }
 
     @Test

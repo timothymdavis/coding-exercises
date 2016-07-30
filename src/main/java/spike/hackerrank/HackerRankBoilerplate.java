@@ -22,7 +22,7 @@ public class HackerRankBoilerplate {
     @SuppressWarnings("unused")
     public static void multiTestCaseWithoutSize(Consumer<Scanner> handler) {
         Scanner scanner = new Scanner(System.in);
-        while (scanner.hasNextInt()) {
+        while (scanner.hasNext()) {
             handler.accept(scanner);
         }
     }
