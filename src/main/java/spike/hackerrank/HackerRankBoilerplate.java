@@ -8,7 +8,6 @@ import java.util.stream.IntStream;
 
 public class HackerRankBoilerplate {
 
-    @SuppressWarnings("unused")
     public static void singleTestCase(Consumer<Scanner> handler) {
         handler.accept(new Scanner(System.in));
     }
