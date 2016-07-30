@@ -1,7 +1,7 @@
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-import spike.hackerrank.HackerRankTest;
+import spike.problems.hackerrank.HackerRankTest;
 
 import java.io.IOException;
 import java.util.ArrayList;
