@@ -6,7 +6,7 @@ import java.util.function.IntFunction;
 import java.util.function.Supplier;
 import java.util.stream.IntStream;
 
-public class HackerRankBoilerplate {
+public class HackerRankTestHelper {
 
     public static void singleTestCase(Consumer<Scanner> handler) {
         handler.accept(new Scanner(System.in));

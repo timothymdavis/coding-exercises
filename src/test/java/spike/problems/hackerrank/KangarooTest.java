@@ -22,7 +22,7 @@ public class KangarooTest extends HackerRankTest {
 
         List<Object> arguments = new ArrayList<>();
 
-        HackerRankBoilerplate.multiTestCaseWithoutSize(s -> {
+        HackerRankTestHelper.multiTestCaseWithoutSize(s -> {
             Kangaroo.solve(s.nextInt(), s.nextInt(), s.nextInt(), s.nextInt());
             populateTestArguments(context, arguments);
         });

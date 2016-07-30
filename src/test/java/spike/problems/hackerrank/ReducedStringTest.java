@@ -22,7 +22,7 @@ public class ReducedStringTest extends HackerRankTest {
 
         List<Object> arguments = new ArrayList<>();
 
-        HackerRankBoilerplate.multiTestCaseWithoutSize(s -> {
+        HackerRankTestHelper.multiTestCaseWithoutSize(s -> {
             ReducedString.solve(s.next());
             populateTestArguments(context, arguments);
         });

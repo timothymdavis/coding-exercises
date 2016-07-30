@@ -22,7 +22,7 @@ public class EncryptionTest extends HackerRankTest {
 
         List<Object> arguments = new ArrayList<>();
 
-        HackerRankBoilerplate.multiTestCaseWithoutSize(s -> {
+        HackerRankTestHelper.multiTestCaseWithoutSize(s -> {
             Encryption.solve(s.next());
             populateTestArguments(context, arguments);
         });

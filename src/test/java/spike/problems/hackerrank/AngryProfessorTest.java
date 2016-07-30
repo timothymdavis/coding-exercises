@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import static spike.problems.hackerrank.HackerRankBoilerplate.nextArray;
+import static spike.problems.hackerrank.HackerRankTestHelper.nextArray;
 
 @RunWith(Parameterized.class)
 public class AngryProfessorTest extends HackerRankTest {
@@ -24,7 +24,7 @@ public class AngryProfessorTest extends HackerRankTest {
 
         List<Object> arguments = new ArrayList<>();
 
-        HackerRankBoilerplate.multiTestCase(s -> {
+        HackerRankTestHelper.multiTestCase(s -> {
             int arraySize = s.nextInt();
             AngryProfessor.solve(s.nextInt(), nextArray(arraySize, s::nextInt, Integer[]::new));
             populateTestArguments(context, arguments);

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import static spike.problems.hackerrank.HackerRankBoilerplate.nextArray;
+import static spike.problems.hackerrank.HackerRankTestHelper.nextArray;
 
 @RunWith(Parameterized.class)
 public class SherlockAndTheBeastTest extends HackerRankTest {
@@ -24,7 +24,7 @@ public class SherlockAndTheBeastTest extends HackerRankTest {
 
         List<Object> arguments = new ArrayList<>();
 
-        HackerRankBoilerplate.singleTestCase(s -> {
+        HackerRankTestHelper.singleTestCase(s -> {
             SherlockAndTheBeast.solution(nextArray(s.nextInt(), s::nextInt, Integer[]::new));
             populateTestArguments(context, arguments);
         });

@@ -24,7 +24,7 @@ public class CaesarCipher1Test extends HackerRankTest {
 
         List<Object> arguments = new ArrayList<>();
 
-        HackerRankBoilerplate.multiTestCaseWithoutSize(s -> {
+        HackerRankTestHelper.multiTestCaseWithoutSize(s -> {
             while(Objects.equals(s.nextLine(), "")) {} // ignore the number of characters
             CaesarCipher1.solve(s.nextLine(), s.nextInt());
             populateTestArguments(context, arguments);

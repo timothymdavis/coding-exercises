@@ -1,8 +1,7 @@
 package spike.problems.hackerrank;
 
 /**
- * See https://www.hackerrank.com/challenges/divisible-sum-pairs and
- * src/main/resources/hackerrank/divisible-sum-pairs-English.pdf
+ * See https://www.hackerrank.com/challenges/divisible-sum-pairs and st rc/main/resources/hackerrank/divisible-sum-pairs-English.pdf
  */
 public class DivisibleSumPairs {
 

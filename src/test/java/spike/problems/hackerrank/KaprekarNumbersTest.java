@@ -22,7 +22,7 @@ public class KaprekarNumbersTest extends HackerRankTest {
 
         List<Object> arguments = new ArrayList<>();
 
-        HackerRankBoilerplate.multiTestCaseWithoutSize(s -> {
+        HackerRankTestHelper.multiTestCaseWithoutSize(s -> {
             KaprekarNumbers.solve(s.nextInt(), s.nextInt());
             populateTestArguments(context, arguments);
         });

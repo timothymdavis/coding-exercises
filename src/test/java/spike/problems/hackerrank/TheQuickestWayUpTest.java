@@ -22,7 +22,7 @@ public class TheQuickestWayUpTest extends HackerRankTest {
 
         List<Object> arguments = new ArrayList<>();
 
-        HackerRankBoilerplate.multiTestCase(s -> {
+        HackerRankTestHelper.multiTestCase(s -> {
             TheQuickestWayUp.solve(s);
             populateTestArguments(context, arguments);
         });
