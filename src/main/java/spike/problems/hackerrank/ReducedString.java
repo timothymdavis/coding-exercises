@@ -6,24 +6,24 @@ package spike.problems.hackerrank;
 public class ReducedString {
 
     public static void solve(String s) {
-        boolean nothingRemoved;
-        do {
-            nothingRemoved = true;
-            for (int i = 0; i < s.length() - 1; i++) {
-                char currentChar = s.charAt(i);
-                char nextChar = s.charAt(i + 1);
-                if (currentChar == nextChar) {
-                    nothingRemoved = false;
-                    String temp = s.substring(0, i);
-                    if (s.length() >= i + 2) {
-                        temp += s.substring(i + 2);
-                    }
-                    s = temp;
-                }
+        String reduced = reduce(s);
+        System.out.println(reduced.isEmpty() ? "Empty String" : reduced);
+    }
+
+    public static String reduce(String s) {
+        if (s.length() > 2) {
+            String l = reduce(s.substring(0, s.length() / 2));
+            String r = reduce(s.substring(s.length() / 2, s.length()));
+            if (!l.isEmpty() && !r.isEmpty() && l.charAt(l.length() - 1) == r.charAt(0)) {
+                return reduce(l.substring(0, l.length() - 1) + r.substring(1));
+            } else {
+                return l + r;
             }
+        } else if (s.length() == 2 && s.charAt(0) == s.charAt(1)) {
+            return "";
+        } else {
+            return s;
         }
-        while (!nothingRemoved);
-        System.out.println(s.isEmpty() ? "Empty String" : s);
     }
 
 }
