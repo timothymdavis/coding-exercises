@@ -3,8 +3,7 @@ package spike.problems.hackerrank;
 import java.util.Arrays;
 
 /**
- * See https://www.hackerrank.com/challenges/angry-professor and
- * src/main/resources/hackerrank/angry-professor-English.pdf
+ * See https://www.hackerrank.com/challenges/angry-professor and src/main/resources/hackerrank/angry-professor-English.pdf
  */
 public class AngryProfessor {
 
