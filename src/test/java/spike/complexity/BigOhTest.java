@@ -7,7 +7,8 @@ import static org.junit.Assert.assertThat;
 
 public class BigOhTest {
 
-    private static int[] TEN_INTS = new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
+    private static final int N = 10;
+    private static int[] TEN_INTS = new int[N];
 
     @Test
     public void test1() throws Exception {
@@ -20,63 +21,56 @@ public class BigOhTest {
     public void testN() throws Exception {
         BigOh bigOh = new BigOh();
         bigOh.ofN(TEN_INTS);
-        assertThat(bigOh.getCount(), is(10D));
+        assertThat(bigOh.getCount(), is((double) N));
     }
 
     @Test
     public void testNRecursive() throws Exception {
         BigOh bigOh = new BigOh();
-        bigOh.ofNRecursive(10);
-        assertThat(bigOh.getCount(), is(10D));
+        bigOh.ofNRecursive((long) N);
+        assertThat(bigOh.getCount(), is((double) N));
     }
 
     @Test
     public void testLogBase2OfN() throws Exception {
         BigOh bigOh = new BigOh();
         bigOh.ofLogBase2OfN(TEN_INTS);
-        assertThat(bigOh.getCount(), is(Math.floor(Math.log(10) / Math.log(2))));
+        assertThat(bigOh.getCount(), is(Math.floor(Math.log(N) / Math.log(2))));
     }
 
     @Test
     public void testLogBase3OfN() throws Exception {
         BigOh bigOh = new BigOh();
         bigOh.ofLogBase3OfN(TEN_INTS);
-        assertThat(bigOh.getCount(), is(Math.floor(Math.log(10) / Math.log(3))));
-    }
-
-    @Test
-    public void testNSquared() throws Exception {
-        BigOh bigOh = new BigOh();
-        bigOh.ofNSquared(TEN_INTS);
-        assertThat(bigOh.getCount(), is(Math.pow(10, 2)));
+        assertThat(bigOh.getCount(), is(Math.floor(Math.log(N) / Math.log(3))));
     }
 
     @Test
     public void testNCubed() throws Exception {
         BigOh bigOh = new BigOh();
         bigOh.ofNCubed(TEN_INTS);
-        assertThat(bigOh.getCount(), is(Math.pow(10, 3)));
+        assertThat(bigOh.getCount(), is(Math.pow(N, 3)));
     }
 
     @Test
     public void test2ToTheN() throws Exception {
         BigOh bigOh = new BigOh();
-        bigOh.of2ToTheN(10);
-        assertThat(bigOh.getCount(), is(Math.pow(2, 10) - 1));
+        bigOh.of2ToTheN((long) N);
+        assertThat(bigOh.getCount(), is(Math.pow(2, N) - 1));
     }
 
     @Test
     public void test3ToTheN() throws Exception {
         BigOh bigOh = new BigOh();
-        bigOh.of3ToTheN(10);
-        assertThat(bigOh.getCount(), is(Math.floor(Math.pow(3, 10) / 2)));
+        bigOh.of3ToTheN((long) N);
+        assertThat(bigOh.getCount(), is(Math.floor(Math.pow(3, N) / 2)));
     }
 
     @Test
     public void test4ToTheN() throws Exception {
         BigOh bigOh = new BigOh();
-        bigOh.of4ToTheN(10);
-        assertThat(bigOh.getCount(), is(Math.floor(Math.pow(4, 10) / 3)));
+        bigOh.of4ToTheN((long) N);
+        assertThat(bigOh.getCount(), is(Math.floor(Math.pow(4, N) / 3)));
     }
 
 }
