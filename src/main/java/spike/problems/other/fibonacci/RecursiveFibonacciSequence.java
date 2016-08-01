@@ -6,13 +6,8 @@ package spike.problems.other.fibonacci;
 public class RecursiveFibonacciSequence implements FibonacciSequence {
 
     @Override
-    public long fib(long max) {
-        if (max <= 1) {
-            return max;
-        }
-        else {
-            return fib(max - 1) + fib(max - 2);
-        }
+    public long fib(long n) {
+        return n <= 1 ? n : fib(n - 1) + fib(n - 2);
     }
 
 }
